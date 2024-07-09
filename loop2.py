@@ -1,11 +1,11 @@
 import numpy as np 
 import matplotlib.pyplot as plt 
-import pdb
+# import pdb
 
 #-------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------
-grid = np.mgrid[1:1000,1:1000].astype(np.float)/50 - 10 
+grid = np.mgrid[1:1000,1:1000].astype(float)/50 - 10 
 x = grid[0]
 y = grid[1]
 
@@ -43,16 +43,14 @@ for i in np.sort(np.round(np.linspace(0.01,1,100),2))[::-1]:
 
 	plt.clf()
 	sc = plt.scatter(x1,y,vmin=np.amin(z),vmax=1.1*np.amax(z),c=z,
-		cmap=plt.cm.get_cmap('viridis'),edgecolors='none',s=10)
+		cmap=plt.get_cmap('viridis'),edgecolors='none',s=10)
 
 	imnum = str(200 - int(i*100))
 	plt.axis('off')
-	plt.savefig('/home/ethan/code/images/loop/img'+imnum+'.png',format='png',dpi=300)
+	# plt.savefig('/home/ethan/code/images/loop/img'+imnum+'.png',format='png',dpi=300)
+	plt.show()
 
-	print imnum
 
-
-#-------------------------------------------------------------------------------------------------
-pdb.set_trace()
+	print(imnum)
 
 
